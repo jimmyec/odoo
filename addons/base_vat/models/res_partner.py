@@ -27,7 +27,7 @@ from odoo.exceptions import ValidationError
 from stdnum.at.uid import compact as compact_at
 from stdnum.be.vat import compact as compact_be
 from stdnum.bg.vat import compact as compact_bg
-from stdnum.ch.vat import compact as compact_ch
+from stdnum.ch.vat import compact as compact_ch, format as format_ch
 from stdnum.cy.vat import compact as compact_cy
 from stdnum.cz.dic import compact as compact_cz
 from stdnum.de.vat import compact as compact_de
@@ -460,24 +460,39 @@ class ResPartner(models.Model):
         except ImportError:
             return True
 
+    def check_vat_ua(self, vat):
+        if self.is_company:
+            if len(vat) == 12:
+                return True
+        else:
+            if len(vat) == 10 or len(vat) == 9:
+                return True
+        return False
+
     def default_compact(self, vat):
         return vat
 
-    def _fix_vat_number(self, vat):
+    def _fix_vat_number(self, vat, country_id):
+        code = self.env['res.country'].browse(country_id).code if country_id else False
         vat_country, vat_number = self._split_vat(vat)
+        if code and code.lower() != vat_country:
+            return vat
         check_func_name = 'compact_' + vat_country
         check_func = globals().get(check_func_name) or getattr(self, 'default_compact')
         vat_number = check_func(vat_number)
-        return vat_country.upper() + vat_number
+        format_func = globals().get('format_' + vat_country)
+        return format_func(vat_country.upper() + vat_number) if format_func else vat_country.upper() + vat_number
 
     @api.model
     def create(self, values):
         if values.get('vat'):
-            values['vat'] = self._fix_vat_number(values['vat'])
+            country_id = values.get('country_id')
+            values['vat'] = self._fix_vat_number(values['vat'], country_id)
         return super(ResPartner, self).create(values)
 
     def write(self, values):
-        if values.get('vat'):
-            values['vat'] = self._fix_vat_number(values['vat'])
+        if values.get('vat') and len(self.mapped('country_id')) == 1:
+            country_id = values.get('country_id', self.country_id.id)
+            values['vat'] = self._fix_vat_number(values['vat'], country_id)
         return super(ResPartner, self).write(values)
-        
+

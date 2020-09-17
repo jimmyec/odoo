@@ -11,9 +11,8 @@
 # Manuela Feliciani <mfeliciani@alice.it>, 2019
 # David Minneci <david@numeko.it>, 2019
 # Paolo Valier, 2019
-# mymage <stefano.consolaro@mymage.it>, 2019
+# Stefano Consolaro <stefano.consolaro@mymage.it>, 2019
 # Luigia Cimmino Caserta <lcc@odoo.com>, 2019
-# Federico Zanuttini <fza@odoo.com>, 2019
 # Petra <bop@odoo.com>, 2019
 # Davide Speranza <dsp@odoo.com>, 2019
 # Martin Trigaux, 2019
@@ -21,6 +20,8 @@
 # Luigi Di Naro <gigidn@gmail.com>, 2019
 # Niccolò Lubello <nlubello@gmail.com>, 2019
 # Léonie Bouchat <lbo@odoo.com>, 2019
+# Lorenzo Battistini <lb@takobi.online>, 2020
+# Iacopo Simonelli <lsi@odoo.com>, 2020
 # Sergio Zanchetta <primes2h@gmail.com>, 2020
 # 
 msgid ""
@@ -679,7 +680,7 @@ msgstr "Descrizione riconoscimento"
 #. module: survey
 #: model_terms:ir.ui.view,arch_db:survey.gamification_badge_form_view_simplified
 msgid "Badge Name"
-msgstr "Nome del riconoscimento"
+msgstr "Nome riconoscimento"
 
 #. module: survey
 #: model:survey.label,value:survey.vendor_certification_page_2_question_2_choice_3
@@ -1320,7 +1321,7 @@ msgstr "Icona"
 #. module: survey
 #: model:ir.model.fields,help:survey.field_survey_survey__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Icona per indicare un'attività di eccezione."
 
 #. module: survey
 #: model:ir.model.fields,field_description:survey.field_survey_user_input__token
@@ -1524,7 +1525,7 @@ msgstr "Ultima domanda/pagina visualizzata"
 #. module: survey
 #: model_terms:ir.ui.view,arch_db:survey.survey_survey_view_search
 msgid "Late Activities"
-msgstr "Ultime attività"
+msgstr "Attività in ritardo"
 
 #. module: survey
 #: model:ir.model.fields,field_description:survey.field_survey_survey__questions_layout
@@ -2127,7 +2128,7 @@ msgstr "Premi per sfide"
 #. module: survey
 #: model:ir.model.fields,field_description:survey.field_survey_user_input_line__value_suggested_row
 msgid "Row answer"
-msgstr ""
+msgstr "Risposta alla riga"
 
 #. module: survey
 #: model_terms:ir.ui.view,arch_db:survey.survey_question_form
@@ -2157,7 +2158,7 @@ msgstr "Righe della matrice"
 #. module: survey
 #: model:ir.model.fields,field_description:survey.field_survey_survey__message_has_sms_error
 msgid "SMS Delivery error"
-msgstr "Errore di invio SMS"
+msgstr "Errore di consegna SMS"
 
 #. module: survey
 #: model:ir.model.fields,field_description:survey.field_survey_user_input_line__answer_score
@@ -2329,7 +2330,7 @@ msgstr "Nessuno ha risposto a questa domanda."
 #. module: survey
 #: model_terms:ir.ui.view,arch_db:survey.result
 msgid "Sorry, no one answered this survey yet."
-msgstr ""
+msgstr "Nessuno ha ancora risposto a questo sondaggio."
 
 #. module: survey
 #: model_terms:ir.ui.view,arch_db:survey.survey_init
@@ -2657,6 +2658,8 @@ msgid ""
 "The following recipients have no user account: %s. You should create user "
 "accounts for them or allow external signup in configuration."
 msgstr ""
+"I seguenti destinatari non possiedono un account utente: %s. Creare gli "
+"account o, nella configurazione, consentire la registrazione dall'esterno."
 
 #. module: survey
 #: model:survey.label,value:survey.survey_feedback_p2_q2_row1
@@ -2851,7 +2854,7 @@ msgstr "Tipo di risposte"
 #. module: survey
 #: model:ir.model.fields,help:survey.field_survey_survey__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Tipo di attività di eccezione sul record."
 
 #. module: survey
 #: model:ir.model.fields,field_description:survey.field_survey_question__labels_ids
@@ -3057,6 +3060,9 @@ msgid ""
 "feedback, recruitment interviews, employee's periodical evaluations, "
 "marketing campaigns, etc."
 msgstr ""
+"Puoi creare sondaggi per diversi scopi: opinioni dei clienti, feedback sui "
+"servizi, interviste di reclutamento, valutazioni periodiche dei dipendenti, "
+"campagne di merketing, etc."
 
 #. module: survey
 #: model:ir.model.constraint,message:survey.constraint_survey_survey_certificate_check

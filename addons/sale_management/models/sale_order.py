@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from datetime import datetime, timedelta
+from datetime import timedelta
 
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError, ValidationError
@@ -32,7 +32,7 @@ class SaleOrder(models.Model):
     def copy(self, default=None):
         if self.sale_order_template_id and self.sale_order_template_id.number_of_days > 0:
             default = dict(default or {})
-            default['validity_date'] = fields.Date.to_string(datetime.now() + timedelta(self.sale_order_template_id.number_of_days))
+            default['validity_date'] = fields.Date.context_today(self) + timedelta(self.sale_order_template_id.number_of_days)
         return super(SaleOrder, self).copy(default=default)
 
     @api.onchange('partner_id')
@@ -112,7 +112,7 @@ class SaleOrder(models.Model):
         self.sale_order_option_ids = option_lines
 
         if template.number_of_days > 0:
-            self.validity_date = fields.Date.to_string(datetime.now() + timedelta(template.number_of_days))
+            self.validity_date = fields.Date.context_today(self) + timedelta(template.number_of_days)
 
         self.require_signature = template.require_signature
         self.require_payment = template.require_payment
@@ -155,7 +155,7 @@ class SaleOrderLine(models.Model):
         if self.product_id and self.order_id.sale_order_template_id:
             for line in self.order_id.sale_order_template_id.sale_order_template_line_ids:
                 if line.product_id == self.product_id:
-                    self.name = line.name
+                    self.name = line.name + self._get_sale_order_line_multiline_description_variants()
                     break
         return domain
 
@@ -224,6 +224,9 @@ class SaleOrderOption(models.Model):
         order_line._compute_tax_id()
 
         self.write({'line_id': order_line.id})
+        if sale_order:
+            sale_order.add_option_to_order_with_taxcloud()
+
 
     def _get_values_to_add_to_order(self):
         self.ensure_one()

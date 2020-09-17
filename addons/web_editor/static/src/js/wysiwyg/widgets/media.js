@@ -143,7 +143,7 @@ var FileWidget = SearchableMediaWidget.extend({
             firstFilters: [],
             lastFilters: [],
             showQuickUpload: config.isDebug(),
-            mediaWidth: media && media.clientWidth,
+            mediaWidth: media && media.parentElement && $(media.parentElement).width(),
         }, options || {});
 
         this.attachments = [];
@@ -486,9 +486,19 @@ var FileWidget = SearchableMediaWidget.extend({
                 self.$media.css(style);
             }
 
+            if (self.options.onUpload) {
+                // We consider that when selecting an image it is as if we upload it in the html content.
+                self.options.onUpload(img);
+            }
+
             // Remove crop related attributes
             if (self.$media.attr('data-aspect-ratio')) {
-                var attrs = ['aspect-ratio', 'x', 'y', 'width', 'height', 'rotate', 'scale-x', 'scale-y', 'crop:originalSrc'];
+                var attrs = ['aspect-ratio', 'x', 'y', 'width', 'height', 'rotate', 'scale-x', 'scale-y'];
+                Object.keys(self.$media.data()).forEach(function (key) {
+                    if (_.str.startsWith(key, 'crop:')) {
+                        attrs.push(key);
+                    }
+                });
                 self.$media.removeClass('o_cropped_img_to_save');
                 _.each(attrs, function (attr) {
                     self.$media.removeData(attr);
@@ -1044,7 +1054,7 @@ var VideoWidget = MediaWidget.extend({
                 '<div class="media_iframe_video" data-oe-expression="' + this.$content.attr('src') + '">' +
                     '<div class="css_editable_mode_display">&nbsp;</div>' +
                     '<div class="media_iframe_video_size" contenteditable="false">&nbsp;</div>' +
-                    '<iframe src="' + this.$content.attr('src') + '" frameborder="0" contenteditable="false"></iframe>' +
+                    '<iframe src="' + this.$content.attr('src') + '" frameborder="0" contenteditable="false" allowfullscreen="allowfullscreen"></iframe>' +
                 '</div>'
             );
             this.media = this.$media[0];

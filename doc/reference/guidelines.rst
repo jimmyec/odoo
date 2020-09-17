@@ -82,8 +82,8 @@ defined in ``<model>_security.xml``.
     addons/plant_nursery/
     |-- security/
     |   |-- ir.model.access.csv
-    |   |-- plant_nusery_groups.xml
-    |   |-- plant_nusery_security.xml
+    |   |-- plant_nursery_groups.xml
+    |   |-- plant_nursery_security.xml
     |   |-- plant_order_security.xml
 
 Concerning *views*, backend views should be split like models and suffixed
@@ -202,8 +202,8 @@ The complete tree of our Odoo module therefore looks like
     |   |-- plant_order_templates.xml (xml report templates)
     |-- security/
     |   |-- ir.model.access.csv
-    |   |-- plant_nusery_groups.xml
-    |   |-- plant_nusery_security.xml
+    |   |-- plant_nursery_groups.xml
+    |   |-- plant_nursery_security.xml
     |   |-- plant_order_security.xml
     |-- static/
     |   |-- img/
@@ -301,7 +301,7 @@ Use the following pattern :
   multiple actions are declared for the model.
 * For window actions: suffix the action name by the specific view information
   like :samp:`{<model_name>}_action_view_{<view_type>}`.
-* For a group: :samp:`{<model_name>}_group_{<group_name>}` where *group_name*
+* For a group: :samp:`{<module_name>}_group_{<group_name>}` where *group_name*
   is the name of the group, generally 'user', 'manager', ...
 * For a rule: :samp:`{<model_name>}_rule_{<concerned_group>}` where
   *concerned_group* is the short name of the concerned group ('user'

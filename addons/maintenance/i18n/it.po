@@ -7,13 +7,14 @@
 # Christian <chris@effeci.info>, 2019
 # Manuela Feliciani <mfeliciani@alice.it>, 2019
 # Léonie Bouchat <lbo@odoo.com>, 2019
-# mymage <stefano.consolaro@mymage.it>, 2019
+# Stefano Consolaro <stefano.consolaro@mymage.it>, 2019
 # Paolo Valier, 2019
 # David Minneci <david@numeko.it>, 2019
 # Davide Speranza <dsp@odoo.com>, 2019
 # Martin Trigaux, 2019
 # Luigi Di Naro <gigidn@gmail.com>, 2019
 # Simone Bernini <simone@aperturelabs.it>, 2019
+# Iacopo Simonelli <lsi@odoo.com>, 2020
 # Sergio Zanchetta <primes2h@gmail.com>, 2020
 # 
 msgid ""
@@ -508,7 +509,7 @@ msgstr "Categoria Attrezzatura"
 #. module: maintenance
 #: model:res.groups,name:maintenance.group_equipment_manager
 msgid "Equipment Manager"
-msgstr "Responsabile Attrezzatura"
+msgstr "Responsabile attrezzature"
 
 #. module: maintenance
 #: model:ir.model.fields,field_description:maintenance.field_maintenance_equipment__name
@@ -625,7 +626,7 @@ msgstr "Icona"
 #: model:ir.model.fields,help:maintenance.field_maintenance_equipment__activity_exception_icon
 #: model:ir.model.fields,help:maintenance.field_maintenance_request__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Icona per indicare un'attività di eccezione."
 
 #. module: maintenance
 #: model:ir.model.fields,help:maintenance.field_maintenance_equipment__message_needaction
@@ -704,7 +705,7 @@ msgstr "Ultimo aggiornamento il"
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_request_view_search
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_view_search
 msgid "Late Activities"
-msgstr "Ultime attività"
+msgstr "Attività in ritardo"
 
 #. module: maintenance
 #: model:ir.model.fields,help:maintenance.field_maintenance_request__email_cc
@@ -1404,7 +1405,7 @@ msgstr ""
 #: model:ir.model.fields,help:maintenance.field_maintenance_equipment__activity_exception_decoration
 #: model:ir.model.fields,help:maintenance.field_maintenance_request__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Tipo di attività di eccezione sul record."
 
 #. module: maintenance
 #: model_terms:ir.ui.view,arch_db:maintenance.hr_equipment_view_search

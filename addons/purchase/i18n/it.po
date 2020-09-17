@@ -16,11 +16,12 @@
 # David Minneci <david@numeko.it>, 2019
 # maiolif <maiolif@mgftools.com>, 2019
 # Léonie Bouchat <lbo@odoo.com>, 2019
-# mymage <stefano.consolaro@mymage.it>, 2019
+# Stefano Consolaro <stefano.consolaro@mymage.it>, 2019
 # Mario Riva <mario.riva@gmail.com>, 2019
-# Federico Zanuttini <fza@odoo.com>, 2019
 # Davide Speranza <dsp@odoo.com>, 2019
 # Giovanni <giovanni@gslab.it>, 2019
+# Iacopo Simonelli <lsi@odoo.com>, 2020
+# Jonathan Quique <jqu@odoo.com>, 2020
 # Sergio Zanchetta <primes2h@gmail.com>, 2020
 # 
 msgid ""
@@ -864,7 +865,7 @@ msgstr "Icona"
 #. module: purchase
 #: model:ir.model.fields,help:purchase.field_purchase_order__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Icona per indicare un'attività di eccezione."
 
 #. module: purchase
 #: model:ir.model.fields,help:purchase.field_purchase_order__message_needaction
@@ -973,7 +974,7 @@ msgstr "Ultimo aggiornamento il"
 #: model_terms:ir.ui.view,arch_db:purchase.purchase_order_view_search
 #: model_terms:ir.ui.view,arch_db:purchase.view_purchase_order_filter
 msgid "Late Activities"
-msgstr "Ultime attività"
+msgstr "Attività in ritardo"
 
 #. module: purchase
 #: model:ir.model.fields,field_description:purchase.field_res_company__po_double_validation
@@ -1257,7 +1258,7 @@ msgstr "Quantità ordinate"
 #: model:ir.ui.menu,name:purchase.menu_procurement_management
 #: model_terms:ir.ui.view,arch_db:purchase.res_config_settings_view_form_purchase
 msgid "Orders"
-msgstr "Ordinamenti"
+msgstr "Ordini"
 
 #. module: purchase
 #: model_terms:ir.ui.view,arch_db:purchase.purchase_order_form
@@ -1768,7 +1769,7 @@ msgstr "Utente responsabile"
 #. module: purchase
 #: model:ir.model.fields,field_description:purchase.field_purchase_order__message_has_sms_error
 msgid "SMS Delivery error"
-msgstr "Errore di invio SMS"
+msgstr "Errore di consegna SMS"
 
 #. module: purchase
 #: model:ir.model.fields,field_description:purchase.field_purchase_order_line__date_planned
@@ -2067,7 +2068,7 @@ msgstr "Importo totale"
 #. module: purchase
 #: model:ir.model.fields,help:purchase.field_purchase_order__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Tipo di attività di eccezione sul record."
 
 #. module: purchase
 #: code:addons/purchase/models/purchase.py:0
@@ -2297,4 +2298,12 @@ msgstr ""
 msgid ""
 "Your quotation contains products from company %s whereas your quotation belongs to company %s. \n"
 " Please change the company of your quotation or remove the products from other companies (%s)."
+msgstr ""
+
+#. module: purchase
+#: code:addons/purchase/models/purchase.py:0
+#, python-format
+msgid ""
+"You cannot change the type of a purchase order line. Instead you should "
+"delete the current line and create a new line of the proper type."
 msgstr ""

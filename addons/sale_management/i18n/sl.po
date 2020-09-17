@@ -4,7 +4,6 @@
 # 
 # Translators:
 # Martin Trigaux, 2020
-# Matjaz Mozetic <m.mozetic@matmoz.si>, 2020
 # Vida Potočnik <vida.potocnik@mentis.si>, 2020
 # laznikd <laznik@mentis.si>, 2020
 # matjaz k <matjaz@mentis.si>, 2020
@@ -12,6 +11,7 @@
 # Boris Kodelja <boris@hbs.si>, 2020
 # Tadej Lupšina <tadej@hbs.si>, 2020
 # Jasmina Macur <jasmina@hbs.si>, 2020
+# Matjaz Mozetic <m.mozetic@matmoz.si>, 2020
 # Grega Vavtar <grega@hbs.si>, 2020
 # 
 msgid ""
@@ -195,7 +195,7 @@ msgstr "Prenesena"
 #: model_terms:ir.ui.view,arch_db:sale_management.sale_order_form_quote
 #: model_terms:ir.ui.view,arch_db:sale_management.sale_order_portal_content_inherit_sale_management
 msgid "Disc.%"
-msgstr ""
+msgstr "Pop.%"
 
 #. module: sale_management
 #: model:ir.model.fields,field_description:sale_management.field_sale_order_option__discount
@@ -380,7 +380,7 @@ msgstr "Graditelj ponudb"
 #. module: sale_management
 #: model:ir.model.fields,field_description:sale_management.field_sale_order_template__number_of_days
 msgid "Quotation Duration"
-msgstr ""
+msgstr "Trajanje predračuna"
 
 #. module: sale_management
 #: model:ir.model,name:sale_management.model_sale_order_template
@@ -485,7 +485,7 @@ msgstr "Postavke predloge predračuna"
 #. module: sale_management
 #: model_terms:ir.ui.view,arch_db:sale_management.sale_order_template_view_search
 msgid "Search Quotation Template"
-msgstr ""
+msgstr "Poišči predlogo predračuna"
 
 #. module: sale_management
 #: model:ir.model.fields.selection,name:sale_management.selection__sale_order_template_line__display_type__line_section

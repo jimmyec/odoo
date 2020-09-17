@@ -4,7 +4,6 @@
 # 
 # Translators:
 # Giovanni Perteghella <giovanni@perteghella.org>, 2019
-# Lorenzo Battistini <lb@takobi.online>, 2019
 # Luca Tralli, 2019
 # Pietro Della Notte <pdellanotte@gmail.com>, 2019
 # Francesco Garganese <francesco.garganese@aeromnia.aero>, 2019
@@ -15,15 +14,15 @@
 # Simone Bernini <simone@aperturelabs.it>, 2019
 # Giacomo Grasso <giacomo.grasso.82@gmail.com>, 2019
 # Paolo Valier, 2019
-# Luigi Di Naro <gigidn@gmail.com>, 2019
-# Martin Trigaux, 2019
+# Martin Trigaux, 2020
+# Luigi Di Naro <gigidn@gmail.com>, 2020
 # Sergio Zanchetta <primes2h@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-25 15:03+0000\n"
+"POT-Creation-Date: 2020-04-27 10:17+0000\n"
 "PO-Revision-Date: 2019-08-26 09:15+0000\n"
 "Last-Translator: Sergio Zanchetta <primes2h@gmail.com>, 2020\n"
 "Language-Team: Italian (https://www.transifex.com/odoo/teams/41243/it/)\n"
@@ -261,9 +260,8 @@ msgid ""
 "A popup window has been blocked. You may need to change your browser "
 "settings to allow popup windows for this page."
 msgstr ""
-"Una finestra popup è stata bloccata. Potresti aver bisogno di modificare le "
-"impostazioni del tuo browser per permettere le finestre popup per questa "
-"pagina."
+"Una finestra popup è stata bloccata. Potrebbe essere necessario modificare "
+"le impostazioni del browser per consentire le finestre popup della pagina."
 
 #. module: web
 #. openerp-web
@@ -403,6 +401,7 @@ msgstr "Aggiungi diramazione"
 
 #. module: web
 #. openerp-web
+#: code:addons/web/static/src/xml/kanban.xml:0
 #: code:addons/web/static/src/xml/kanban.xml:0
 #, python-format
 msgid "Add column"
@@ -683,7 +682,6 @@ msgstr "Campi disponibili"
 
 #. module: web
 #. openerp-web
-#: code:addons/web/static/src/xml/base.xml:0
 #: code:addons/web/static/src/xml/kanban.xml:0
 #: code:addons/web/static/src/xml/kanban.xml:0
 #: code:addons/web/static/src/xml/web_calendar.xml:0
@@ -811,6 +809,13 @@ msgstr "calendario"
 
 #. module: web
 #. openerp-web
+#: code:addons/web/static/src/xml/web_calendar.xml:0
+#, python-format
+msgid "Calendar toolbar"
+msgstr ""
+
+#. module: web
+#. openerp-web
 #: code:addons/web/static/src/js/views/calendar/calendar_view.js:0
 #, python-format
 msgid "Calendar view has not defined 'date_start' attribute."
@@ -866,6 +871,14 @@ msgstr "Cambia default:"
 
 #. module: web
 #. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Change graph"
+msgstr ""
+
+#. module: web
+#. openerp-web
 #: code:addons/web/static/src/js/fields/basic_fields.js:0
 #, python-format
 msgid "Checkbox"
@@ -916,6 +929,9 @@ msgstr "Firma in chiaro"
 #: code:addons/web/static/src/js/widgets/data_export.js:0
 #: code:addons/web/static/src/js/widgets/domain_selector_dialog.js:0
 #: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/dialog.xml:0
+#: code:addons/web/static/src/xml/notification.xml:0
 #, python-format
 msgid "Close"
 msgstr "Chiudi"
@@ -933,6 +949,11 @@ msgstr "Colonna %s"
 #, python-format
 msgid "Column title"
 msgstr "Titolo colonna"
+
+#. module: web
+#: model:ir.model,name:web.model_res_company
+msgid "Companies"
+msgstr "Aziende"
 
 #. module: web
 #: model_terms:ir.ui.view,arch_db:web.frontend_layout
@@ -1004,6 +1025,14 @@ msgstr "Contesto:"
 #, python-format
 msgid "Control"
 msgstr "Control"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Control panel toolbar"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -1349,6 +1378,13 @@ msgstr "Errore dominio"
 #. openerp-web
 #: code:addons/web/static/src/xml/base.xml:0
 #, python-format
+msgid "Domain node"
+msgstr ""
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
 msgid "Domain:"
 msgstr "Dominio:"
 
@@ -1358,6 +1394,13 @@ msgstr "Dominio:"
 #, python-format
 msgid "Don't leave yet,<br />it's still loading..."
 msgstr "Caricamento ancora in corso...<br />non abbandonare"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Download"
+msgstr "Scarica"
 
 #. module: web
 #. openerp-web
@@ -2133,6 +2176,17 @@ msgstr "Mac"
 #. module: web
 #: model_terms:ir.ui.view,arch_db:web.external_layout_boxed
 msgid "Mail:"
+msgstr "E-mail:"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Main actions"
 msgstr ""
 
 #. module: web
@@ -2632,6 +2686,13 @@ msgstr "Opacità %"
 #. openerp-web
 #: code:addons/web/static/src/xml/debug.xml:0
 #, python-format
+msgid "Open Developer Tools#{widget.debug_mode_help}"
+msgstr ""
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/debug.xml:0
+#, python-format
 msgid "Open View"
 msgstr "Apri vista"
 
@@ -2698,6 +2759,13 @@ msgid "PDF Viewer"
 msgstr "Visualizzatore PDF"
 
 #. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "PDF controls"
+msgstr ""
+
+#. module: web
 #: model_terms:ir.ui.view,arch_db:web.external_layout_background
 msgid ""
 "Page:\n"
@@ -2715,6 +2783,14 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:web.external_layout_standard
 msgid "Page: <span class=\"page\"/> / <span class=\"topage\"/>"
 msgstr "Pagina: <span class=\"page\"/> / <span class=\"topage\"/>"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Pager"
+msgstr ""
 
 #. module: web
 #: model_terms:ir.ui.view,arch_db:web.login
@@ -2789,6 +2865,13 @@ msgstr ""
 #, python-format
 msgid "Pivot"
 msgstr "pivot"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Pivot settings"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -3481,6 +3564,13 @@ msgstr "Supporto"
 
 #. module: web
 #. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "Switch to this company"
+msgstr ""
+
+#. module: web
+#. openerp-web
 #: code:addons/web/static/src/js/widgets/domain_selector.js:0
 #, python-format
 msgid "Syntax error"
@@ -3499,13 +3589,6 @@ msgstr "Etichette"
 #, python-format
 msgid "Take a minute to get a coffee,<br />because it's loading..."
 msgstr "Attendere prego,<br />caricamento in corso..."
-
-#. module: web
-#. openerp-web
-#: code:addons/web/static/src/xml/base.xml:0
-#, python-format
-msgid "Tap on the list to change company"
-msgstr ""
 
 #. module: web
 #. openerp-web
@@ -4016,6 +4099,13 @@ msgstr "Utilizzare come predefinita"
 
 #. module: web
 #. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "User"
+msgstr "Utente"
+
+#. module: web
+#. openerp-web
 #: code:addons/web/static/src/js/services/crash_manager.js:0
 #, python-format
 msgid "User Error"
@@ -4061,6 +4151,13 @@ msgstr "Visualizza metadati"
 #: model:ir.model.fields,field_description:web.field_ir_actions_act_window_view__view_mode
 msgid "View Type"
 msgstr "Tipo vista"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "View switcher"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -4639,6 +4736,13 @@ msgstr ""
 #, python-format
 msgid "remaining)"
 msgstr "rimanenti)"
+
+#. module: web
+#. openerp-web
+#: code:addons/web/static/src/xml/base.xml:0
+#, python-format
+msgid "search"
+msgstr ""
 
 #. module: web
 #. openerp-web

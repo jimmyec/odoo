@@ -23,6 +23,7 @@ var PaymentSix = PaymentInterface.extend({
         settings.connectionMode = timapi.constants.ConnectionMode.onFixIp;
         settings.connectionIPString = this.payment_method.six_terminal_ip;
         settings.connectionIPPort = "80";
+        settings.integratorId = "175d97a0-2a88-4413-b920-e90037b582ac";
 
         this.terminal = new timapi.Terminal(settings);
         this.terminal.posId = this.pos.pos_session.name;
@@ -81,10 +82,13 @@ var PaymentSix = PaymentInterface.extend({
         timapi.DefaultTerminalListener.prototype.transactionCompleted(event, data);
 
         if (event.exception) {
-            this.pos.gui.show_popup('error', {
-                title: _t('Terminal Error'),
-                body: _t('Transaction was not processed correctly'),
-            });
+            var line = this.pos.get_order().selected_paymentline;
+            if (line && line.get_payment_status() !== 'retry') {
+                this.pos.gui.show_popup('error', {
+                    title: _t('Terminal Error'),
+                    body: _t('Transaction was not processed correctly'),
+                });
+            }
 
             this.transactionResolve();
         } else {
@@ -118,8 +122,9 @@ var PaymentSix = PaymentInterface.extend({
 
     _sendTransaction: function (transactionType) {
         var amount = new timapi.Amount(
-            this.pos.get_order().selected_paymentline.amount,
-            timapi.constants.Currency[this.pos.currency.name]
+            Math.round(this.pos.get_order().selected_paymentline.amount / this.pos.currency.rounding),
+            timapi.constants.Currency[this.pos.currency.name],
+            this.pos.currency.decimals
         );
 
         return new Promise((resolve) => {

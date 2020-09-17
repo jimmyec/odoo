@@ -520,7 +520,7 @@ exports.PosModel = Backbone.Model.extend({
                     reject();
                 };
                 self.company_logo.crossOrigin = "anonymous";
-                self.company_logo.src = '/web/binary/company_logo' + '?dbname=' + session.db + '&_' + Math.random();
+                self.company_logo.src = '/web/binary/company_logo' + '?dbname=' + session.db + '&company=' + self.company.id + '&_' + Math.random();
             });
         },
     }, {
@@ -2007,6 +2007,7 @@ exports.Orderline = Backbone.Model.extend({
             });
             product_taxes.push.apply(product_taxes, self._map_tax_fiscal_position(tax));
         });
+        product_taxes = _.uniq(product_taxes, function(tax) { return tax.id; });
 
         var all_taxes = this.compute_all(product_taxes, price_unit, this.get_quantity(), this.pos.currency.rounding);
         var all_taxes_before_discount = this.compute_all(product_taxes, this.get_unit_price(), this.get_quantity(), this.pos.currency.rounding);
@@ -2477,7 +2478,7 @@ exports.Order = Backbone.Model.extend({
                 hour: date.getHours(),
                 minute: date.getMinutes() ,
                 isostring: date.toISOString(),
-                localestring: date.toLocaleString(),
+                localestring: this.formatted_validation_date,
             },
             company:{
                 email: company.email,
@@ -2638,6 +2639,12 @@ exports.Order = Backbone.Model.extend({
         var line = new exports.Orderline({}, {pos: this.pos, order: this, product: product});
         this.fix_tax_included_price(line);
 
+        if(options.extras !== undefined){
+            for (var prop in options.extras) {
+                line[prop] = options.extras[prop];
+            }
+        }
+
         if(options.quantity !== undefined){
             line.set_quantity(options.quantity);
         }
@@ -2653,12 +2660,6 @@ exports.Order = Backbone.Model.extend({
 
         if(options.discount !== undefined){
             line.set_discount(options.discount);
-        }
-
-        if(options.extras !== undefined){
-            for (var prop in options.extras) {
-                line[prop] = options.extras[prop];
-            }
         }
 
         var to_merge_orderline;
@@ -3030,6 +3031,9 @@ exports.Order = Backbone.Model.extend({
     },
     wait_for_push_order: function () {
         return this.is_to_email();
+    },
+    get_total_balance: function() {
+        return this.get_total_with_tax() - this.get_total_paid();
     },
 });
 

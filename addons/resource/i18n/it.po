@@ -12,7 +12,8 @@
 # Pietro Della Notte <pdellanotte@gmail.com>, 2019
 # maiolif <maiolif@mgftools.com>, 2019
 # Léonie Bouchat <lbo@odoo.com>, 2019
-# mymage <stefano.consolaro@mymage.it>, 2019
+# Stefano Consolaro <stefano.consolaro@mymage.it>, 2019
+# Iacopo Simonelli <lsi@odoo.com>, 2020
 # Sergio Zanchetta <primes2h@gmail.com>, 2020
 # 
 msgid ""
@@ -262,6 +263,13 @@ msgstr ""
 "risorsa senza rimuoverlo."
 
 #. module: resource
+#: code:addons/resource/models/resource.py:0
+#, python-format
+msgid ""
+"In a calendar with 2 weeks mode, all periods need to be in the sections."
+msgstr ""
+
+#. module: resource
 #: model_terms:ir.ui.view,arch_db:resource.view_resource_resource_search
 msgid "Inactive"
 msgstr "Non attivo"
@@ -390,7 +398,7 @@ msgstr ""
 #. module: resource
 #: model:ir.model,name:resource.model_resource_calendar_leaves
 msgid "Resource Time Off Detail"
-msgstr ""
+msgstr "Dettaglio della risorsa ferie"
 
 #. module: resource
 #: model:ir.model.fields,field_description:resource.field_resource_resource__resource_type
@@ -551,6 +559,11 @@ msgid ""
 "the efficiency factor is 200%, however the expected duration will be 30 "
 "minutes."
 msgstr ""
+"Questo campo viene utilizzato per calcolare la durata prevista di un ordine "
+"di lavoro nel centro di lavoro. Ad esempio, se un ordine di lavoro richiede "
+"un'ora e il fattore di efficienza è del 100%, la durata prevista sarà di "
+"un'ora. Se il fattore di efficienza è del 200%, tuttavia la durata prevista "
+"sarà di 30 minuti."
 
 #. module: resource
 #: model:ir.model.fields.selection,name:resource.selection__resource_calendar_attendance__dayofweek__3
